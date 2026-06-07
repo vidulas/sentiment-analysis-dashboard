@@ -76,3 +76,19 @@ python src/create_dashboard_outputs.py
 ```
 
 The dashboard-ready files are saved inside `data/processed/dashboard_outputs/`. The notebook `notebooks/03_dashboard_output_analysis.ipynb` explains the outputs and includes simple visualizations for KPIs, sentiment, ratings, product review counts, and negative review percentages.
+
+## Stage 5: AWS S3 Upload
+
+The dashboard output files from `data/processed/dashboard_outputs/` are uploaded to AWS S3 for storage and later dashboard access. The bucket used for this project is `sentiment-dashboard-vidulas-2026`, and the dashboard files are stored under the S3 prefix `dashboard_outputs/`.
+
+The AWS CLI was used to manually upload and verify the dashboard output files. The script `src/upload_to_s3.py` can automate the upload process using boto3.
+
+Run the script with:
+
+```bash
+python src/upload_to_s3.py
+```
+
+The script reads the bucket name from the `S3_BUCKET_NAME` environment variable. If that variable is missing, it falls back to `sentiment-dashboard-vidulas-2026`. Use `.env.example` as a template for local environment settings.
+
+Do not commit AWS access keys, secret keys, session tokens, or private credentials.
