@@ -92,3 +92,14 @@ python src/upload_to_s3.py
 The script reads the bucket name from the `S3_BUCKET_NAME` environment variable. If that variable is missing, it falls back to `sentiment-dashboard-vidulas-2026`. Use `.env.example` as a template for local environment settings.
 
 Do not commit AWS access keys, secret keys, session tokens, or private credentials.
+
+## Stage 6A: Streamlit Dashboard Prototype
+
+The Streamlit dashboard prototype is located at `dashboard/streamlit/app.py`. It loads the dashboard-ready outputs from `data/processed/dashboard_outputs/` and presents executive KPIs, sentiment and rating charts, product sentiment analysis, and a filtered review explorer.
+
+Install dependencies and run the app with:
+
+```bash
+pip install -r requirements.txt
+streamlit run dashboard/streamlit/app.py
+```
