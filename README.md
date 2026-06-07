@@ -64,3 +64,15 @@ python src/sentiment_analysis.py
 ```
 
 The sentiment analysis output is saved to `data/processed/sentiment_results.csv`. The notebook `notebooks/02_sentiment_analysis.ipynb` explains the VADER process step by step with beginner-friendly examples and basic visualizations.
+
+## Stage 4: Dashboard Outputs
+
+The Stage 4 dashboard output script is located at `src/create_dashboard_outputs.py`. It loads `data/processed/sentiment_results.csv` and creates dashboard-ready CSV and JSON files for review-level data, sentiment distribution, rating distribution, product sentiment summaries, top positive and negative review examples, sentiment match summary, and overall KPIs.
+
+Run the script with:
+
+```bash
+python src/create_dashboard_outputs.py
+```
+
+The dashboard-ready files are saved inside `data/processed/dashboard_outputs/`. The notebook `notebooks/03_dashboard_output_analysis.ipynb` explains the outputs and includes simple visualizations for KPIs, sentiment, ratings, product review counts, and negative review percentages.
