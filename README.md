@@ -52,3 +52,15 @@ python src/clean_reviews.py
 ```
 
 The cleaned dataset is saved to `data/processed/cleaned_reviews.csv`.
+
+## Stage 3: Sentiment Analysis
+
+The Stage 3 sentiment script is located at `src/sentiment_analysis.py`. It loads `data/processed/cleaned_reviews.csv`, applies VADER sentiment scoring to `full_review_text`, creates VADER score columns, converts compound scores into positive, negative, or neutral labels, and compares those labels with the original dataset sentiment column.
+
+Run the script with:
+
+```bash
+python src/sentiment_analysis.py
+```
+
+The sentiment analysis output is saved to `data/processed/sentiment_results.csv`. The notebook `notebooks/02_sentiment_analysis.ipynb` explains the VADER process step by step with beginner-friendly examples and basic visualizations.
